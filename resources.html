@@ -98,9 +98,6 @@
             <p>Comprehensive organizations, support groups, financial assistance programs, and tools to help you navigate life with invisible disabilities.</p>
         </section>
 
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search resources..." onkeyup="searchResources()">
-        </div>
 
         <div class="crisis-box">
             <h3>🚨 Crisis Resources - Available 24/7</h3>
@@ -444,21 +441,7 @@
         </p>
     </footer>
 
-    <script>
-        function searchResources() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const items = document.querySelectorAll('.resource-item');
-            
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(input)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
+
 	<script>
 <script>
   function filterCategory(category) {
