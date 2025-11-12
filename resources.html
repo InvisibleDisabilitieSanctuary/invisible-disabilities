@@ -13,8 +13,16 @@
         .nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
         .nav-links a { text-decoration: none; color: #4a5568; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #667eea; }
+		.nav-links a.active {
+  background-color: #f3e8ff; /* soft lavender */
+  color: #2c2c2c; /* cozy contrast */
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        .page-hero { text-align: center; margin-bottom: 3rem; }
 		.page-hero {
   text-align: center;
   margin-bottom: 3rem;
@@ -24,8 +32,21 @@
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-        .page-hero h1 { font-size: 2.5rem; color: #2c2c2c; ... }
-.page-hero p { font-size: 1.2rem; color: #4a3c2f; ... }
+        .page-hero h1 {
+  font-size: 2.5rem;
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.page-hero p {
+  font-size: 1.2rem;
+  color: #4a3c2f;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
 
 
         .search-box { max-width: 600px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; }
@@ -96,7 +117,7 @@
                 <li><a href="about.html">About</a></li>
 				<li><a href="educational.html">Learn</a></li> 
                 <li><a href="conditions.html">Conditions</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="resources.html"class="active">Resources</a></li>
             </ul>
         </nav>
     </header>
