@@ -17,6 +17,7 @@
         .page-hero { text-align: center; margin-bottom: 3rem; }
         .page-hero h1 { font-size: 2.5rem; color: white; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
         .page-hero p { font-size: 1.2rem; color: white; max-width: 800px; margin: 0 auto; }
+		.page-hero {text-align: center;margin-bottom: 3rem;background-color: #f3e8ff; /* Soft lavender */color: #2c2c2c; /* Deep gray for contrast */padding: 2rem;border-radius: 12px;box-shadow: 0 0 10px rgba(0,0,0,0.1);}
         .search-box { max-width: 600px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; }
         .search-box input { flex: 1; border: none; outline: none; font-size: 1rem; padding: 0.5rem 1rem; }
         .resource-categories { display: grid; gap: 2rem; }
@@ -31,6 +32,26 @@
         .resource-item a { color: #667eea; text-decoration: none; font-weight: 600; }
         .resource-item a:hover { text-decoration: underline; }
         .resource-item p { color: #4a5568; font-size: 0.95rem; margin-top: 0.5rem; }
+		/* Fade In Animation */
+.resource-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When shown */
+.resource-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glow on Hover */
+.resource-item:hover {
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.4); /* soft blue glow */
+  transform: scale(1.02);
+}
+
+
         .crisis-box { background: linear-gradient(135deg, #fc8181 0%, #f56565 100%); color: white; padding: 2rem; border-radius: 15px; margin: 2rem 0; box-shadow: 0 10px 30px rgba(252, 129, 129, 0.3); }
         .crisis-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
         .crisis-box .crisis-number { font-size: 2rem; font-weight: bold; margin: 1rem 0; }
@@ -442,28 +463,37 @@
     </footer>
 
 
-	<script>
 <script>
-  function filterCategory(category) {
-    const items = document.querySelectorAll(".resource-item");
-    items.forEach(item => {
-      if (category === 'all' || item.classList.contains(category)) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-
-  const input = document.getElementById("searchInput");
-  input.addEventListener("keyup", function() {
-    const filter = input.value.toLowerCase();
-    const items = document.querySelectorAll(".resource-item");
-    items.forEach(item => {
-      item.style.display = item.textContent.toLowerCase().includes(filter) ? "" : "none";
-    });
+function filterCategory(category) {
+  const items = document.querySelectorAll(".resource-item");
+  items.forEach(item => {
+    if (category === 'all' || item.classList.contains(category)) {
+      item.style.display = '';
+      item.classList.add('show'); // ✨ add fade-in class
+    } else {
+      item.style.display = 'none';
+      item.classList.remove('show');
+    }
   });
+}
+
+const input = document.getElementById("searchInput");
+input.addEventListener("keyup", function() {
+  const filter = input.value.toLowerCase();
+  const items = document.querySelectorAll(".resource-item");
+  items.forEach(item => {
+    if (item.textContent.toLowerCase().includes(filter)) {
+      item.style.display = '';
+      item.classList.add('show'); // ✨ add fade-in class
+    } else {
+      item.style.display = 'none';
+      item.classList.remove('show');
+    }
+  });
+});
 </script>
+
+
 
 
 
