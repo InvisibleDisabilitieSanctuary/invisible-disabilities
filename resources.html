@@ -599,11 +599,11 @@
 function filterCategory(category) {
   const items = document.querySelectorAll(".resource-item");
   items.forEach(item => {
-    if (category === 'all' || item.classList.contains(category)) {
-      item.style.display = '';
+    const matchesCategory = category === 'all' || item.classList.contains(category);
+    item.style.display = matchesCategory ? '' : 'none';
+    if (matchesCategory) {
       item.classList.add('show');
     } else {
-      item.style.display = 'none';
       item.classList.remove('show');
     }
   });
@@ -611,25 +611,31 @@ function filterCategory(category) {
 
 document.addEventListener("DOMContentLoaded", function() {
   const input = document.getElementById("searchInput");
+  const items = document.querySelectorAll(".resource-item");
+
+  // Show all items on initial load
+  items.forEach(item => {
+    item.style.display = '';
+    item.classList.add('show');
+  });
+
   if (input) {
     input.addEventListener("keyup", function() {
       const filter = input.value.toLowerCase();
-      const items = document.querySelectorAll(".resource-item");
       items.forEach(item => {
-        if (item.textContent.toLowerCase().includes(filter)) {
-          item.style.display = '';
+        const match = item.textContent.toLowerCase().includes(filter);
+        item.style.display = match ? '' : 'none';
+        if (match) {
           item.classList.add('show');
         } else {
-          item.style.display = 'none';
           item.classList.remove('show');
         }
       });
     });
   }
-
-  // Show all items on initial load
-  filterCategory('all');
 });
 </script>
+
+
 </body>
 </html>
