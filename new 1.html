@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Filter</title>
+  <style>
+    .resource-item {
+      background: #f7fafc;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 4px solid #667eea;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .resource-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Filter Test</h2>
+  <button onclick="filterCategory('education')">Education</button>
+  <button onclick="filterCategory('support')">Support</button>
+  <button onclick="filterCategory('all')">Show All</button>
+
+  <input type="text" id="searchInput" placeholder="Search..." />
+
+  <div class="resource-categories">
+    <div class="resource-item education">
+      <h4>Education Resource</h4>
+      <p>Learn more about invisible disabilities.</p>
+    </div>
+    <div class="resource-item support">
+      <h4>Support Group</h4>
+      <p>Find community and connection.</p>
+    </div>
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".resource-item");
+  const input = document.getElementById("searchInput");
+
+  // Show all items on page load
+  items.forEach(item => {
+    item.style.display = 'block';
+    item.classList.add('show');
+  });
+
+  // Filter by category
+  window.filterCategory = function (category) {
+    input.value = ''; // clear search when switching category
+    items.forEach(item => {
+      const match = category === 'all' || item.classList.contains(category);
+      item.style.display = match ? 'block' : 'none';
+      if (match) {
+        item.classList.add('show');
+      } else {
+        item.classList.remove('show');
+      }
+    });
+  };
+
+  // Search across all items, even hidden ones
+  if (input) {
+    input.addEventListener("keyup", function () {
+      const filter = input.value.toLowerCase();
+      items.forEach(item => {
+        const match = item.textContent.toLowerCase().includes(filter);
+        item.style.display = match ? 'block' : 'none';
+        if (match) {
+          item.classList.add('show');
+        } else {
+          item.classList.remove('show');
+        }
+      });
+    });
+  }
+});
+</script>
+
+
+
+</body>
+</html>
+
