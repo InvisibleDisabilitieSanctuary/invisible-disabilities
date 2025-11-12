@@ -596,35 +596,36 @@
 
 
 <script>
-function filterCategory(category) {
+document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".resource-item");
-  items.forEach(item => {
-    const matchesCategory = category === 'all' || item.classList.contains(category);
-    item.style.display = matchesCategory ? '' : 'none';
-    if (matchesCategory) {
-      item.classList.add('show');
-    } else {
-      item.classList.remove('show');
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
   const input = document.getElementById("searchInput");
-  const items = document.querySelectorAll(".resource-item");
 
-  // Show all items on initial load
+  // ✅ Show all items on page load
   items.forEach(item => {
-    item.style.display = '';
-    item.classList.add('show');
+    item.style.display = 'block'; // force visibility
+    item.classList.add('show');   // trigger fade-in
   });
 
+  // ✅ Filter by category
+  window.filterCategory = function (category) {
+    items.forEach(item => {
+      const match = category === 'all' || item.classList.contains(category);
+      item.style.display = match ? 'block' : 'none';
+      if (match) {
+        item.classList.add('show');
+      } else {
+        item.classList.remove('show');
+      }
+    });
+  };
+
+  // ✅ Filter by search
   if (input) {
-    input.addEventListener("keyup", function() {
+    input.addEventListener("keyup", function () {
       const filter = input.value.toLowerCase();
       items.forEach(item => {
         const match = item.textContent.toLowerCase().includes(filter);
-        item.style.display = match ? '' : 'none';
+        item.style.display = match ? 'block' : 'none';
         if (match) {
           item.classList.add('show');
         } else {
@@ -635,6 +636,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
+
+
 
 
 </body>
