@@ -250,7 +250,7 @@
             <div class="resource-section">
                 <h2>🌟 General Invisible Disability Organizations</h2>
                 
-                <div class="resource-item education">
+                <div class="resource-item education show">
                     <h4>Invisible Disabilities Association (IDA)</h4>
                     <a href="https://invisibledisabilities.org" target="_blank">invisibledisabilities.org</a>
                     <p>Comprehensive resource for education, support, and advocacy. Annual awards program recognizing invisible disability advocates.</p>
@@ -584,7 +584,7 @@ function filterCategory(category) {
   items.forEach(item => {
     if (category === 'all' || item.classList.contains(category)) {
       item.style.display = '';
-      item.classList.add('show'); // ✨ add fade-in class
+      item.classList.add('show');
     } else {
       item.style.display = 'none';
       item.classList.remove('show');
@@ -592,21 +592,30 @@ function filterCategory(category) {
   });
 }
 
-const input = document.getElementById("searchInput");
-input.addEventListener("keyup", function() {
-  const filter = input.value.toLowerCase();
-  const items = document.querySelectorAll(".resource-item");
-  items.forEach(item => {
-    if (item.textContent.toLowerCase().includes(filter)) {
-      item.style.display = '';
-      item.classList.add('show'); // ✨ add fade-in class
-    } else {
-      item.style.display = 'none';
-      item.classList.remove('show');
-    }
-  });
+document.addEventListener("DOMContentLoaded", function() {
+  const input = document.getElementById("searchInput");
+  if (input) {
+    input.addEventListener("keyup", function() {
+      const filter = input.value.toLowerCase();
+      const items = document.querySelectorAll(".resource-item");
+      items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(filter)) {
+          item.style.display = '';
+          item.classList.add('show');
+        } else {
+          item.style.display = 'none';
+          item.classList.remove('show');
+        }
+      });
+    });
+  }
+
+  // Show all by default
+  filterCategory('all');
 });
 </script>
+
+
 
 
 
