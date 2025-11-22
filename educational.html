@@ -13,6 +13,12 @@
         .nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
         .nav-links a { text-decoration: none; color: #4a5568; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #667eea; }
+		.nav-links a.active {
+  color: #667eea; /* purple highlight */
+  font-weight: 600;
+}
+
+
         .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
         .page-hero { text-align: center; margin-bottom: 2rem; }
         .page-hero h1 { font-size: 2.5rem; color: white; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
@@ -51,120 +57,123 @@
         </nav>
     </header>
 
-    <div class="container">
-        <section class="page-hero">
-            <h1>📚 Educational Foundations</h1>
-            <p>Essential concepts for understanding invisible disabilities</p>
-        </section>
+    <div <div class="container">
+  <section class="page-hero">
+    <h1>📚 Educational Foundations</h1>
+    <p>Essential concepts for understanding invisible disabilities</p>
+  </section>
 
-        <!-- SPOON THEORY -->
-        <article class="content-card" id="spoon-theory">
-            <div class="section">
-                <h2 class="section-title">🥄 The Spoon Theory Explained</h2>
-                
-                <p><strong>What is the Spoon Theory?</strong></p>
-                <p>The Spoon Theory was created by Christine Miserandino in 2003 to help explain what it's like to live with a chronic illness. She used spoons as a visual metaphor for the limited energy we have each day.</p>
+  <!-- SPOON THEORY -->
+  <article class="content-card" id="spoon-theory">
+    <div class="section">
+      <h2 class="section-title">🥄 The Spoon Theory Explained</h2>
+      
+      <p><strong>What is the Spoon Theory?</strong></p>
+      <p>The Spoon Theory was created by Christine Miserandino in 2003 to help explain what it's like to live with a chronic illness. She used spoons as a visual metaphor for the limited energy we have each day, offering comfort and clarity to those who struggle to be understood.</p>
 
-                <p><strong>How It Works:</strong></p>
-                <p>Imagine you wake up with 12 spoons each morning. Each spoon represents a unit of energy.</p>
+      <p><strong>How It Works:</strong></p>
+      <p>Imagine you wake up with 12 spoons each morning. Each spoon represents a unit of energy.</p>
 
-                <div class="example-box">
-                    <p><strong>Everything you do costs spoons:</strong></p>
-                    <div class="spoon-visual">🥄</div>
-                    <p>Getting out of bed = 1 spoon</p>
-                    <div class="spoon-visual">🥄🥄</div>
-                    <p>Showering and getting dressed = 2 spoons</p>
-                    <div class="spoon-visual">🥄</div>
-                    <p>Making breakfast = 1 spoon</p>
-                    <div class="spoon-visual">🥄🥄🥄</div>
-                    <p>Working (half day) = 3 spoons</p>
-                    <div class="spoon-visual">🥄🥄</div>
-                    <p>Grocery shopping = 2 spoons</p>
-                    <div class="spoon-visual">🥄🥄</div>
-                    <p>Making dinner = 2 spoons</p>
-                    <div class="spoon-visual">🥄</div>
-                    <p>Basic household tasks = 1 spoon</p>
-                    <p style="margin-top: 1rem; font-weight: 600;">That's already 12 spoons - and your day isn't over!</p>
-                </div>
+      <div class="example-box">
+        <p><strong>Everything you do costs spoons:</strong></p>
+        <div class="spoon-visual">🥄</div>
+        <p>Getting out of bed = 1 spoon</p>
+        <div class="spoon-visual">🥄🥄</div>
+        <p>Showering and getting dressed = 2 spoons</p>
+        <div class="spoon-visual">🥄</div>
+        <p>Making breakfast = 1 spoon</p>
+        <div class="spoon-visual">🥄🥄🥄</div>
+        <p>Working (half day) = 3 spoons</p>
+        <div class="spoon-visual">🥄🥄</div>
+        <p>Grocery shopping = 2 spoons</p>
+        <div class="spoon-visual">🥄🥄</div>
+        <p>Making dinner = 2 spoons</p>
+        <div class="spoon-visual">🥄</div>
+        <p>Basic household tasks = 1 spoon</p>
+        <p style="margin-top: 1rem; font-weight: 600;">That's already 12 spoons – and your day isn't over!</p>
+      </div>
 
-                <div class="highlight-box">
-                    <p><strong>The Reality:</strong></p>
-                    <ul>
-                        <li>💔 When you run out of spoons, you're DONE. No choice, no pushing through.</li>
-                        <li>💔 Some days you wake up with fewer spoons (flare days, bad nights, stress)</li>
-                        <li>💔 Unexpected events steal spoons (doctor calls, family emergencies, pain spikes)</li>
-                        <li>💔 You have to choose - Do I shower OR go to that appointment?</li>
-                    </ul>
-                </div>
+      <div class="highlight-box">
+        <p><strong>The Reality:</strong></p>
+        <ul>
+          <li>💔 When you run out of spoons, you're DONE. It’s not weakness—it’s the body saying “enough.”</li>
+          <li>💔 Some days you wake up with fewer spoons (flare days, bad nights, stress)</li>
+          <li>💔 Unexpected events steal spoons (doctor calls, family emergencies, pain spikes)</li>
+          <li>💔 You have to choose – Do I shower OR go to that appointment?</li>
+        </ul>
+      </div>
 
-                <p><strong>What "Healthy" People Don't Understand:</strong></p>
-                <ul>
-                    <li>❌ "Just push through it" - There's nothing left to push with</li>
-                    <li>❌ "You seemed fine yesterday" - I used tomorrow's spoons</li>
-                    <li>❌ "I'm tired too" - Tired and chronically ill exhaustion are different</li>
-                    <li>❌ "Just rest more" - Rest doesn't always restore spoons</li>
-                </ul>
+      <p><strong>What "Healthy" People Don't Understand:</strong></p>
+      <ul>
+        <li>❌ "Just push through it" – Energy isn’t endless; honoring limits is an act of strength.</li>
+        <li>❌ "You seemed fine yesterday" – I used tomorrow’s spoons.</li>
+        <li>❌ "I’m tired too" – Tired and chronically ill exhaustion are different.</li>
+        <li>❌ "Just rest more" – Rest doesn’t always restore spoons.</li>
+      </ul>
 
-                <div class="tip-box">
-                    <p><strong>Spoon Management Tips:</strong></p>
-                    <ul>
-                        <li>✅ Pace yourself - Don't use all spoons in the morning</li>
-                        <li>✅ Plan ahead - Save spoons for important events</li>
-                        <li>✅ Ask for help - Let others contribute their spoons</li>
-                        <li>✅ Be flexible - Some days you have more/fewer spoons</li>
-                        <li>✅ Don't feel guilty - Your spoons are precious and limited</li>
-                    </ul>
-                </div>
+      <div class="tip-box">
+        <p><strong>Spoon Management Tips:</strong></p>
+        <ul>
+          <li>✅ Pace yourself – Don’t use all spoons in the morning.</li>
+          <li>✅ Plan ahead – Save spoons for important events.</li>
+          <li>✅ Ask for help – Let others contribute their spoons.</li>
+          <li>✅ Be flexible – Some days you have more/fewer spoons.</li>
+          <li>✅ Don’t feel guilty – Your spoons are precious and limited, and protecting them is self‑care.</li>
+        </ul>
+      </div>
 
-                <div class="highlight-box">
-                    <p><strong>Remember, Spoonies:</strong></p>
-                    <ul>
-                        <li>🌟 You're not lazy - You're managing a limited resource wisely</li>
-                        <li>🌟 Your spoons matter - Don't let anyone make you waste them</li>
-                        <li>🌟 Some days are harder - That's not your fault</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
+      <div class="highlight-box">
+        <p><strong>Remember, Spoonies:</strong></p>
+        <ul>
+          <li>🌟 You’re not lazy – You’re managing a limited resource wisely.</li>
+          <li>🌟 Your spoons matter – Don’t let anyone make you waste them.</li>
+          <li>🌟 Some days are harder – That’s not your fault, and you deserve compassion on those days.</li>
+          <li>🌟 Sharing your spoon story helps others understand and honor your journey.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</div>
 
-        <!-- INVISIBLE VS VISIBLE -->
-        <article class="content-card" id="invisible-vs-visible">
-            <div class="section">
-                <h2 class="section-title">👁️ Understanding Disability: The Full Spectrum</h2>
-                
-                <p><strong>What Are Invisible Disabilities?</strong></p>
-                <p>Invisible disabilities are conditions that significantly impact a person's life but aren't immediately apparent to others. About 96% of people with chronic medical conditions have an illness that is invisible.</p>
+<!-- INVISIBLE VS VISIBLE -->
+<article class="content-card" id="invisible-vs-visible">
+  <div class="section">
+    <h2 class="section-title">👁️ Understanding Disability: The Full Spectrum</h2>
+    
+    <p><strong>What Are Invisible Disabilities?</strong></p>
+    <p>Invisible disabilities are conditions that significantly impact a person's life but aren't immediately apparent to others. About 96% of people with chronic medical conditions have an illness that is invisible, reminding us that much of the struggle is hidden yet deeply real.</p>
 
-                <p><strong>What Are Visible Disabilities?</strong></p>
-                <p>Visible disabilities are conditions that others can readily see - mobility aids, limb differences, white canes, or other physical differences.</p>
+    <p><strong>What Are Visible Disabilities?</strong></p>
+    <p>Visible disabilities are conditions that others can readily see—mobility aids, limb differences, white canes, or other physical differences. These are often recognized more quickly, but recognition does not always equal understanding.</p>
 
-                <div class="warning-box">
-                    <p><strong>🚫 THE PROBLEM WITH THE HIERARCHY</strong></p>
-                    <p>Society has created a harmful hierarchy where visible disabilities are seen as "more legitimate" while invisible disabilities are questioned or dismissed.</p>
-                </div>
+    <div class="warning-box">
+      <p><strong>🚫 The Problem with the Hierarchy</strong></p>
+      <p>Society has created a harmful hierarchy where visible disabilities are seen as "more legitimate," while invisible disabilities are questioned or dismissed. This false divide causes pain and erodes trust, when in truth all disabilities deserve equal respect.</p>
+    </div>
 
-                <p><strong>For People with Invisible Disabilities:</strong></p>
-                <ul>
-                    <li>Constantly having to "prove" their disability</li>
-                    <li>Being told "you don't look sick"</li>
-                    <li>Having accommodations questioned</li>
-                    <li>Being accused of faking</li>
-                </ul>
+    <p><strong>For People with Invisible Disabilities:</strong></p>
+    <ul>
+      <li>Constantly having to "prove" their disability</li>
+      <li>Being told "you don't look sick"</li>
+      <li>Having accommodations questioned</li>
+      <li>Being accused of faking</li>
+    </ul>
 
-                <p><strong>For People with Visible Disabilities:</strong></p>
-                <ul>
-                    <li>Being reduced to their disability</li>
-                    <li>Having strangers assume they need help</li>
-                    <li>Being treated as "inspirational" just for existing</li>
-                    <li>Having independence questioned</li>
-                </ul>
+    <p><strong>For People with Visible Disabilities:</strong></p>
+    <ul>
+      <li>Being reduced to their disability</li>
+      <li>Having strangers assume they need help</li>
+      <li>Being treated as "inspirational" just for existing</li>
+      <li>Having independence questioned</li>
+    </ul>
 
-                <div class="highlight-box">
-                    <p><strong>💜 WHY BOTH MATTER EQUALLY</strong></p>
-                    <p>Disability is about impact, not appearance. Whether someone uses a wheelchair or lives with chronic fatigue, both face real barriers. Every disabled person deserves to be believed, supported, and respected.</p>
-                </div>
-            </div>
-        </article>
+    <div class="highlight-box">
+      <p><strong>💜 Why Both Matter Equally</strong></p>
+      <p>Disability is about impact, not appearance. Whether someone uses a wheelchair or lives with chronic fatigue, both face real barriers. Every disabled person deserves to be believed, supported, and respected. True inclusion means honoring every journey, seen or unseen.</p>
+    </div>
+  </div>
+</article>
+
 
         <!-- NAVIGATING HEALTHCARE -->
         <article class="content-card" id="healthcare">
