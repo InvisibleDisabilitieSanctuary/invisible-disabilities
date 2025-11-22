@@ -175,6 +175,14 @@
         .crisis-box p { margin-bottom: 0.5rem; }
         footer { background: rgba(255, 255, 255, 0.95); padding: 2rem; text-align: center; margin-top: 3rem; color: #4a5568; }
         @media (max-width: 768px) { .page-hero h1 { font-size: 2rem; } .resource-section { padding: 2rem 1.5rem; } }
+#categoryFilters button.active,
+.category-card button.active {
+  background-color: #f3e8ff; /* soft lavender */
+  color: #2c2c2c;           /* cozy contrast */
+  box-shadow: 0 0 12px rgba(102, 126, 234, 0.6); /* gentle blue glow */
+  font-weight: 600;
+}
+
     </style>
 </head>
 <body>
@@ -595,10 +603,12 @@
     </footer>
 
 
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".resource-item");
   const input = document.getElementById("searchInput");
+  const filterButtons = document.querySelectorAll("#categoryFilters button, .category-card button");
 
   // Show all items on page load
   items.forEach(item => {
@@ -618,25 +628,25 @@ document.addEventListener("DOMContentLoaded", function () {
         item.classList.remove('show');
       }
     });
+
+    // Highlight the active button
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    filterButtons.forEach(btn => {
+      if (btn.getAttribute("onclick") === `filterCategory('${category}')`) {
+        btn.classList.add('active');
+      }
+    });
   };
 
-  // Search across all items, highlight matches
+  // Search across all items
   if (input) {
     input.addEventListener("keyup", function () {
       const filter = input.value.toLowerCase();
       items.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        const match = text.includes(filter);
-
+        const match = item.textContent.toLowerCase().includes(filter);
         item.style.display = match ? 'block' : 'none';
         if (match) {
           item.classList.add('show');
-
-          // Highlight the matching text
-          const innerHTML = item.innerHTML;
-          const regex = new RegExp(filter, "gi");
-          item.innerHTML = innerHTML.replace(/<mark>|<\/mark>/g, ""); // clear old highlights
-          item.innerHTML = item.innerHTML.replace(regex, match => `<mark>${match}</mark>`);
         } else {
           item.classList.remove('show');
         }
@@ -645,6 +655,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
 
 
 
