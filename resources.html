@@ -600,14 +600,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".resource-item");
   const input = document.getElementById("searchInput");
 
-  // ✅ Show all items on page load
+  // Show all items on page load
   items.forEach(item => {
-    item.style.display = 'block'; // force visibility
-    item.classList.add('show');   // trigger fade-in
+    item.style.display = 'block';
+    item.classList.add('show');
   });
 
-  // ✅ Filter by category
+  // Filter by category
   window.filterCategory = function (category) {
+    input.value = ''; // clear search when switching category
     items.forEach(item => {
       const match = category === 'all' || item.classList.contains(category);
       item.style.display = match ? 'block' : 'none';
@@ -619,15 +620,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // ✅ Filter by search
+  // Search across all items, highlight matches
   if (input) {
     input.addEventListener("keyup", function () {
       const filter = input.value.toLowerCase();
       items.forEach(item => {
-        const match = item.textContent.toLowerCase().includes(filter);
+        const text = item.textContent.toLowerCase();
+        const match = text.includes(filter);
+
         item.style.display = match ? 'block' : 'none';
         if (match) {
           item.classList.add('show');
+
+          // Highlight the matching text
+          const innerHTML = item.innerHTML;
+          const regex = new RegExp(filter, "gi");
+          item.innerHTML = innerHTML.replace(/<mark>|<\/mark>/g, ""); // clear old highlights
+          item.innerHTML = item.innerHTML.replace(regex, match => `<mark>${match}</mark>`);
         } else {
           item.classList.remove('show');
         }
@@ -636,6 +645,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
 
 
 
