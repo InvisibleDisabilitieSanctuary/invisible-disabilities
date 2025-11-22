@@ -634,6 +634,80 @@
   opacity: 0.9;
 }
 
+.top-share {
+  text-align: right; /* aligns to top-right */
+  margin: 1rem 0;
+}
+
+.top-share-btn {
+  background: #6c63ff; /* purple accent */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.top-share-btn:hover {
+  background: #5a54d6;
+  transform: translateY(-2px);
+}
+
+.top-share {
+  position: relative;
+  text-align: right;
+  margin: 1rem 0;
+}
+
+.share-toggle {
+  background: #6c63ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.share-toggle:hover {
+  background: #5a54d6;
+}
+
+.share-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.share-menu a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  text-decoration: none;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.share-menu a:hover {
+  background: #eee;
+  border-radius: 4px;
+}
+
+
+/* Show menu when hovering over the container */
+.top-share:hover .share-menu {
+  display: block;
+}
+
+
 
 
 	</style>
@@ -655,6 +729,26 @@
 	<div class="bekind-banner">
     <span class="heart">💜</span> #BeKind - You never know what invisible battles someone is fighting <span class="heart">💜</span>
 </div>
+
+<div class="top-share">
+  <button class="share-toggle" aria-label="Share this page" onclick="toggleShareMenu()">💜 Share</button>
+  <div class="share-menu" id="shareMenu">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://loridoll78-gif.github.io/invisible-disabilities/conditions.html" 
+       target="_blank" aria-label="Share on Facebook">📘 Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://loridoll78-gif.github.io/invisible-disabilities/conditions.html&text=Understanding%20Invisible%20Disabilities%20-%20A%20comprehensive%20guide%20%23BeKind" 
+       target="_blank" aria-label="Share on Twitter">🐦 Twitter</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://loridoll78-gif.github.io/invisible-disabilities/conditions.html" 
+       target="_blank" aria-label="Share on LinkedIn">💼 LinkedIn</a>
+    <a href="mailto:?subject=Understanding Invisible Disabilities&body=I thought you might find this helpful! Learn more here: https://loridoll78-gif.github.io/invisible-disabilities/conditions.html" 
+       aria-label="Share via Email">✉️ Email</a>
+  </div>
+</div>
+
+
+
+
+
+
 
     <div class="container">
         <aside class="sidebar">
@@ -6768,6 +6862,25 @@ function searchConditions() {
   });
 }
 </script>
+
+<script>
+function toggleShareMenu() {
+  const menu = document.getElementById('shareMenu');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Close menu if clicking outside
+document.addEventListener('click', function(event) {
+  const menu = document.getElementById('shareMenu');
+  const toggle = document.querySelector('.share-toggle');
+  
+  if (menu.style.display === 'block' && !menu.contains(event.target) && !toggle.contains(event.target)) {
+    menu.style.display = 'none';
+  }
+});
+</script>
+
+
 
 </body>
 </html>
