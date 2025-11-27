@@ -2,9 +2,12 @@
 
 ![Accessibility Friendly](https://img.shields.io/badge/Accessibility-Friendly-brightgreen)
 ![Built with Love](https://img.shields.io/badge/Built%20with-%E2%9D%A4-red)
+![Open Source](https://img.shields.io/badge/Open%20Source-Yes-blue)
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/InvisibleDisabilitiesSanctuary/invisible-disabilities)
 ![GitHub Stars](https://img.shields.io/github/stars/InvisibleDisabilitiesSanctuary/invisible-disabilities?style=social)
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=InvisibleDisabilitiesSanctuary.invisible-disabilities)
+
+
 
 A nurturing, sanctuary-like space for invisible disabilities — blending practical support with affirmation and accessibility.
 
