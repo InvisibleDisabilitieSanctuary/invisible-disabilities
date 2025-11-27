@@ -439,6 +439,16 @@
 
 <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
 
+<div id="shared-footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("shared-footer").innerHTML = data;
+    });
+</script>
+
+
 <footer>
   <p style="text-align: center; font-weight: bold; font-size: 1.1rem; color: #4a4a4a;">
     Understanding Invisible Disabilities
@@ -453,7 +463,17 @@
   <p style="text-align: center; margin-top: 1rem; font-size: 0.95rem; color: #6c63ff;">
     💜 Your invisible struggle is real. Your pain is valid. You are not alone. 💜
   </p>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #555;">
+  MIT Licensed • 
+  <a href="https://github.com/InvisibleDisabilitieSanctuary/invisible-disabilities" 
+     target="_blank" rel="noopener noreferrer" 
+     style="color:#6c63ff; text-decoration:none;">
+     View on GitHub
+  </a>
+</p>
+
 </footer>
+
 
 
 <script>

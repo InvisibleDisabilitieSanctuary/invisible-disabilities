@@ -6,6 +6,9 @@
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/InvisibleDisabilitieSanctuary/invisible-disabilities)
 ![GitHub Stars](https://img.shields.io/github/stars/InvisibleDisabilitieSanctuary/invisible-disabilities?style=social)
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=InvisibleDisabilitieSanctuary.invisible-disabilities)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+
+
 
 A nurturing, sanctuary-like space for invisible disabilities — blending practical support with affirmation and accessibility.
 
@@ -28,6 +31,10 @@ Contributions are welcome! Please open an issue or submit a pull request with id
 
 ## 💖 Acknowledgments
 Created with care to make digital spaces feel like sanctuaries — where clarity meets compassion, and every detail affirms the unseen.
+
+## 📜 License
+Released under the MIT License. See [LICENSE.md](LICENSE.md) for details.
+
 
 ---
 
