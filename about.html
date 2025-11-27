@@ -424,18 +424,16 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Understanding Invisible Disabilities</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-				<li><a href="educational.html">Learn</a></li> 
-                <li><a href="conditions.html">Conditions</a></li>
-                <li><a href="resources.html">Resources</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="shared-header"></div>
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("shared-header").innerHTML = data;
+    });
+</script>
+
+
 
     <main>
       <section id="about" class="about-section pretty-about">
