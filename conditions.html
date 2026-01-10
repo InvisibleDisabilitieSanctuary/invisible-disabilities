@@ -725,10 +725,12 @@
   color: #6c63ff; /* your sanctuary purple */
   border-bottom: 2px solid #6c63ff;
 }
-/* Mobile-friendly spacing for category intros */
+/* Mobile‑friendly spacing for category intros */
 .category-intro {
     padding: 1.2rem 1rem;
     line-height: 1.6;
+    max-width: 100%;        /* Prevents horizontal overflow */
+    box-sizing: border-box; /* Ensures padding stays inside width */
 }
 
 /* Extra breathing room on very small screens */
@@ -737,9 +739,22 @@
         padding: 1.4rem 1.2rem;
         margin: 0 0 1.2rem 0;
         line-height: 1.7;
+        font-size: 1rem;    /* Prevents mobile auto‑zoom */
     }
 }
 
+/* Ensures back‑to‑top button stays visible above everything */
+.back-to-top {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    z-index: 9999;
+}
+@media (max-width: 480px) {
+    .condition-header h2 {
+        font-size: 1.6rem;
+    }
+}
 
 
 
@@ -795,7 +810,6 @@
 
 
 
-
     <div class="container">
         <aside class="sidebar">
             <h2>🔍 Browse Conditions</h2>
@@ -803,8 +817,10 @@
             
             <ul class="category-nav">
                 <li>
-                    <div class="category-title">🦠 Autoimmune & Chronic Illness</div>
+
+                    <div class="category-title"><a href="#autoimmune-intro">🦠 Autoimmune & Chronic Illness</a></div>
                     <ul class="condition-links">
+					
                         <li><a href="#lupus">Lupus</a></li>
                         <li><a href="#rheumatoid-arthritis">Rheumatoid Arthritis</a></li>
                         <li><a href="#psoriatic-arthritis">Psoriatic Arthritis</a></li>
@@ -819,7 +835,7 @@
                     </ul>
                 </li>
                 <li>
-                    <div class="category-title">⚡ Pain & Fatigue</div>
+                    <div class="category-title"><a href="#pain-fatigue-intro">⚡ Pain & Fatigue</a></div>
                     <ul class="condition-links">
                         <li><a href="#fibromyalgia">Fibromyalgia</a></li>
                         <li><a href="#eds">Ehlers-Danlos Syndrome</a></li>
@@ -831,7 +847,7 @@
                     </ul>
                 </li>
 				<li>
-					<div class="category-title">🦠 Post‑Viral Conditions</div>
+					<div class="category-title"><a href="#post-viral-intro">🦠 Post‑Viral Conditions</a></div>
 					<ul class="condition-links">
 						<li><a href="#cfs">ME/CFS (Myalgic Encephalomyelitis)</a></li>
 						<li><a href="#longcovid">Long COVID (PASC)</a></li>
@@ -839,7 +855,7 @@
 					</ul>
 				</li>
                 <li>
-                    <div class="category-title">🧠 Mental Health</div>
+                    <div class="category-title"><a href="#mental-health-intro">🧠 Mental Health</a></div>
 					<ul class="condition-links">
 						<li><a href="#depression">Depression</a></li>
 						<li><a href="#anxiety">Anxiety Disorders</a></li>
@@ -856,7 +872,7 @@
 						<li><a href="#dissociative">Dissociative Disorders</a></li>
 						<li><a href="#schizoaffective-disorder">Schizoaffective Disorder</a></li>
 					</ul>
-					<div class="category-title">🔬 Neurological & Cognitive</div>
+					<div class="category-title"><a href="#neurological-intro">🔬 Neurological & Cognitive</a></div>
 					<ul class="condition-links">
 						<li><a href="#autism">Autism Spectrum Disorder</a></li>
 						<li><a href="#traumatic-brain-injury">Traumatic Brain Injury</a></li>
@@ -871,7 +887,7 @@
 					</ul>
 				</li>
 				<li>
-					<div class="category-title">👂 Sensory Disabilities</div>
+					<div class="category-title"><a href="#sensory-intro">👂 Sensory Disabilities</a></div>
 					<ul class="condition-links">
 						<li><a href="#hearing-loss">Hearing Loss & Deafness</a></li>
 						<li><a href="#vision-impairment">Vision Impairment & Blindness</a></li>
@@ -879,7 +895,7 @@
 					</ul>
 				</li>
 				<li>
-					<div class="category-title">💜 Special Topics</div>
+					<div class="category-title"><a href="#special-topics-intro">💜 Special Topics</a></div>
 					<ul class="condition-links">
 						<li><a href="#perimenopause">Perimenopause</a></li>
 						<li><a href="#mitrofanoff">Living with Mitrofanoff Stoma</a></li>
@@ -969,7 +985,7 @@
 </html>
 
 <div id="all-conditions"></div>
-<div class="category-intro" id="autoimmune-category">
+<div class="category-intro" id="autoimmune-intro">
     <h2>Autoimmune & Chronic Illness</h2>
     <p>Autoimmune and chronic inflammatory conditions occur when the immune system becomes dysregulated and begins attacking the body’s own tissues. These conditions are often lifelong, unpredictable, and deeply misunderstood. Many symptoms — like pain, fatigue, inflammation, and cognitive strain — are invisible to others, making validation and compassion essential.</p>
     <p>This section includes a range of autoimmune and chronic inflammatory conditions. Each card offers a clear, accessible explanation of what the condition is, why it’s invisible, and how to support people living with it.</p>
@@ -2010,7 +2026,7 @@ Every day with PsA requires courage, resilience, and determination to live fully
     </div>
 </div>
 
-<div class="category-intro" id="pain-fatigue-category">
+<div class="category-intro" id="pain-fatigue-intro">
     <h2>Pain & Fatigue Conditions</h2>
     <p>Pain and fatigue conditions affect the body’s ability to regulate energy, process sensory input, and maintain physical comfort. These conditions are often invisible, unpredictable, and deeply misunderstood. People may look “fine” while managing exhaustion, widespread pain, or cognitive strain that impacts every part of daily life.</p>
     <p>This section includes conditions that involve chronic pain, persistent fatigue, and multisystem dysregulation. Each card offers a clear, compassionate explanation of what the condition is, why it’s invisible, and how to support people living with it.</p>
@@ -2724,7 +2740,7 @@ Every day with PsA requires courage, resilience, and determination to live fully
 </div>
 
 
-<div class="category-intro" id="post-viral-conditions">
+<div class="category-intro" id="post-viral-intro">
     <h2>Post‑Viral & Post‑Infectious Conditions</h2>
     <p>Post‑viral and post‑infectious conditions develop after the body fights an infection. Even after the initial illness resolves, the immune system, nervous system, or energy‑regulation systems may remain disrupted. These conditions can cause chronic fatigue, pain, cognitive challenges, and multisystem symptoms that are often invisible and misunderstood.</p>
     <p>This section includes conditions that arise after viral or bacterial infections and continue to affect daily life long after the original illness has passed. Each card offers a clear, compassionate explanation of what the condition is, why it’s invisible, and how to support people living with it.</p>
@@ -3189,7 +3205,7 @@ Every day with PsA requires courage, resilience, and determination to live fully
     </div>
 </div>
 
-<div class="category-intro" id="mental-health">
+<div class="category-intro" id="mental-health-intro">
     <h2>Mental Health Conditions</h2>
     <p>Mental health conditions affect thoughts, emotions, energy, and the way a person experiences the world. They are real medical conditions — not personality flaws, weaknesses, or choices. Many people live with symptoms that are invisible on the outside but deeply impactful on the inside.</p>
 
@@ -4474,7 +4490,7 @@ Every day with PsA requires courage, resilience, and determination to live fully
 </div>
 
 
-<div class="category-intro">
+<div class="category-intro" id="neurological-intro">
     <p>Neurological and cognitive conditions affect how the brain and nervous system process information, movement, sensation, memory, and communication. These conditions are often invisible, misunderstood, or minimized because many symptoms happen internally — in thoughts, perception, or the body’s automatic functions.</p>
 
     <p>This category includes conditions that impact cognition, sensory processing, motor control, and the way the brain communicates with the rest of the body. Some are lifelong, some develop over time, and many fluctuate day to day, creating challenges that others may not see.</p>
@@ -5390,7 +5406,7 @@ Every day with PsA requires courage, resilience, and determination to live fully
     </div>
 </div>
 
-<div class="category-intro">
+<div class="category-intro" id="sensory-intro">
     <p>Sensory disabilities affect how a person receives, processes, or interprets information from the world around them. These conditions can involve hearing, vision, or the way the brain responds to sensory input such as sound, light, texture, movement, or touch. Because so much of sensory experience happens internally, these disabilities are often misunderstood or overlooked.</p>
 
     <p>Sensory disabilities are not about being “too sensitive,” “distracted,” or “difficult.” They reflect real differences in how the nervous system functions. Some people experience reduced sensory input, such as hearing loss or vision impairment. Others experience heightened or unpredictable sensory responses, such as sensory overload or difficulty filtering stimuli.</p>
@@ -5673,7 +5689,7 @@ Every day with PsA requires courage, resilience, and determination to live fully
     </div>
 </div>
 
-<div class="category-intro">
+<div class="category-intro" id="special-topics-intro">
     <p>The Special Topics category includes conditions and experiences that don’t fit neatly into a single medical or disability group but still have a profound impact on daily life. These topics often involve complex interactions between the body, mind, hormones, environment, and lived experience. Many are misunderstood, minimized, or overlooked because they don’t follow a simple pattern or because their symptoms are invisible.</p>
 
     <p>People navigating these conditions are not “overreacting,” “too sensitive,” or imagining their symptoms. They are living with real challenges that deserve clarity, validation, and support. This category exists to shine light on experiences that are often dismissed or misunderstood, offering gentle explanations that honor both the science and the humanity behind them.</p>
