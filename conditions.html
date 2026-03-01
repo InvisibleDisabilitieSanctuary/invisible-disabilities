@@ -784,6 +784,28 @@
 <div id="shared-header"></div>
 
 <script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("shared-header").innerHTML = data;
+
+      let currentPage = window.location.pathname.split("/").pop();
+      if (currentPage === "" || currentPage === "/") {
+        currentPage = "index.html";
+      }
+
+      const navLinks = document.querySelectorAll(".nav-links a");
+      navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    });
+</script>
+
+
+
+<script>
 /* Earlier fade‑in so new visitors notice it */
 document.addEventListener("scroll", function () {
   const button = document.querySelector(".back-to-top");
