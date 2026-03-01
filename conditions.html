@@ -820,6 +820,40 @@ html, body {
   display: block;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  background: #6c63ff;        /* Sanctuary purple */
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .back-to-top {
+    right: 10px;
+    bottom: 18px;
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+}
+
 
 
 
@@ -858,12 +892,11 @@ html, body {
 
 
 <script>
-/* Earlier fade‑in so new visitors notice it */
 document.addEventListener("scroll", function () {
   const button = document.querySelector(".back-to-top");
   if (!button) return;
 
-  if (window.scrollY > 120) {        // appears sooner
+  if (window.scrollY > 60) {   // appears earlier
     button.style.opacity = "1";
     button.style.pointerEvents = "auto";
   } else {
@@ -872,6 +905,8 @@ document.addEventListener("scroll", function () {
   }
 });
 </script>
+
+
 
 
 	
@@ -6119,7 +6154,9 @@ Every day with PsA requires courage, resilience, and determination to live fully
 
 </main>
 
-<div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+<div class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</div>
+
+
 
 <div id="shared-footer"></div>
 <script>
