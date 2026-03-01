@@ -715,6 +715,8 @@
 }
 
 
+<style>
+
 /* Show menu when hovering over the container */
 .top-share:hover .share-menu {
   display: block;
@@ -722,66 +724,74 @@
 
 .nav-links a.active {
   font-weight: bold;
-  color: #6c63ff; /* your sanctuary purple */
+  color: #6c63ff; /* sanctuary purple */
   border-bottom: 2px solid #6c63ff;
 }
+
 /* Mobile‑friendly spacing for category intros */
 .category-intro {
-    padding: 1.2rem 1rem;
-    line-height: 1.6;
-    max-width: 100%;        /* Prevents horizontal overflow */
-    box-sizing: border-box; /* Ensures padding stays inside width */
+  padding: 1.2rem 1rem;
+  line-height: 1.6;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Extra breathing room on very small screens */
 @media (max-width: 480px) {
-    .category-intro {
-        padding: 1.4rem 1.2rem;
-        margin: 0 0 1.2rem 0;
-        line-height: 1.7;
-        font-size: 1rem;    /* Prevents mobile auto‑zoom */
-    }
+  .category-intro {
+    padding: 1.4rem 1.2rem;
+    margin: 0 0 1.2rem 0;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
 }
 
-/* Ensures back‑to‑top button stays visible above everything */
+/* Base back‑to‑top button styling */
 .back-to-top {
-    position: fixed;
-    bottom: 1.2rem;
-    right: 1.2rem;
-    z-index: 9999;
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  z-index: 9999;
+  opacity: 0;                 /* prepares for fade-in */
+  pointer-events: none;       /* prevents clicking when hidden */
+  transition: opacity 0.3s ease;
 }
+
+/* Make the button clearly visible on phones */
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 2.5rem;           /* above gesture bar */
+    right: 1.5rem;            /* pulled inward */
+    transform: scale(1.2);    /* easier to see/tap */
+  }
+}
+
+/* Mobile header size fix */
 @media (max-width: 480px) {
-    .condition-header h2 {
-        font-size: 1.6rem;
-    }
+  .condition-header h2 {
+    font-size: 1.6rem;
+  }
 }
 
+</style>
 
-
-	</style>
-</head>
-<body>
-    <div id="shared-header"></div>
 <script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("shared-header").innerHTML = data;
+/* Earlier fade‑in so new visitors notice it */
+document.addEventListener("scroll", function () {
+  const button = document.querySelector(".back-to-top");
+  if (!button) return;
 
-      // Now that header is loaded, highlight the active nav link
-      let currentPage = window.location.pathname.split("/").pop();
-      if (currentPage === "" || currentPage === "/") {
-        currentPage = "index.html"; // treat empty path as homepage
-      }
-
-      const navLinks = document.querySelectorAll(".nav-links a");
-      navLinks.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-          link.classList.add("active");
-        }
-      });
-    });
+  if (window.scrollY > 120) {        // appears sooner
+    button.style.opacity = "1";
+    button.style.pointerEvents = "auto";
+  } else {
+    button.style.opacity = "0";
+    button.style.pointerEvents = "none";
+  }
+});
 </script>
+
+
 
 
 	
