@@ -757,14 +757,18 @@
   transition: opacity 0.3s ease;
 }
 
-/* Make the button clearly visible on phones */
 @media (max-width: 600px) {
   .back-to-top {
-    bottom: 2.5rem;           /* above gesture bar */
-    right: 1.5rem;            /* pulled inward */
-    transform: scale(1.2);    /* easier to see/tap */
+    right: 8px;       /* pulls it fully into view */
+    bottom: 16px;     /* above gesture bar */
+    transform: none;  /* removes the zoom-out push */
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 }
+
+
 
 /* Mobile header size fix */
 @media (max-width: 480px) {
@@ -793,6 +797,29 @@ body, html {
   word-wrap: break-word;
   max-width: 100%;
 }
+
+html, body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.bekind-banner {
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.share-menu a {
+  word-wrap: break-word;
+  max-width: 100%;
+  display: block;
+}
+
 
 
 
